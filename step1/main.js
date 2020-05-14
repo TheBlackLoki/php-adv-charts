@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    moment.locale('it')
   $.ajax({
     url:"server.php",
     method:"GET",
@@ -7,38 +8,12 @@ $(document).ready(function () {
       var myChart = new Chart(ctx, {
           type: 'line',
           data: {
-              labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+              labels: getMonths(),
               datasets: [{
                   label: 'Vendite',
                   data: data,
-                  backgroundColor: [
-                    'rgba(0, 128, 0, 1)',
-                    'rgba(0, 128, 0, 1)',
-                    'rgba(0, 128, 0, 1)',
-                    'rgba(0, 128, 0, 1)',
-                    'rgba(0, 128, 0, 1)',
-                    'rgba(0, 128, 0, 1)',
-                    'rgba(0, 128, 0, 1)',
-                    'rgba(0, 128, 0, 1)',
-                    'rgba(0, 128, 0, 1)',
-                    'rgba(0, 128, 0, 1)',
-                    'rgba(0, 128, 0, 1)',
-                    'rgba(0, 128, 0, 1)'
-                  ],
-                  borderColor: [
-                    'rgba(178, 39, 12, 1)',
-                    'rgba(178, 39, 12, 1)',
-                    'rgba(178, 39, 12, 1)',
-                    'rgba(178, 39, 12, 1)',
-                    'rgba(178, 39, 12, 1)',
-                    'rgba(178, 39, 12, 1)',
-                    'rgba(178, 39, 12, 1)',
-                    'rgba(178, 39, 12, 1)',
-                    'rgba(178, 39, 12, 1)',
-                    'rgba(178, 39, 12, 1)',
-                    'rgba(178, 39, 12, 1)',
-                    'rgba(178, 39, 12, 1)'
-                  ],
+                  backgroundColor:'rgba(0, 128, 0, 1)',
+                  borderColor:'rgba(178, 39, 12, 1)',
                   borderWidth: 3
               }]
           },
@@ -59,10 +34,13 @@ $(document).ready(function () {
               }
           }
       });
-      console.log(data);
     },
     error:function (richiesta,stato,errore) {
       alert("Chiamata fallita!")
     }
   })
 })
+function getMonths() {
+
+  return moment.months();
+}
