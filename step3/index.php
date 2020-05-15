@@ -14,6 +14,12 @@
       <div class="firstChart">
         <canvas id="lineChart"></canvas>
       </div>
+      <div class="secondChart">
+        <canvas id="pieChart"></canvas>
+      </div>
+      <div class="thirdChart">
+        <canvas id="multilineChart"></canvas>
+      </div>
     </div>
   </body>
 </html>

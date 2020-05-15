@@ -10,11 +10,13 @@
     <title>Chart Step 2</title>
   </head>
   <body>
+    <div class="container">
     <div class="firstChart">
       <canvas id="lineChart"></canvas>
     </div>
     <div class="secondChart">
       <canvas id="pieChart"></canvas>
     </div>
+  </div>
   </body>
 </html>

@@ -35,7 +35,7 @@ $(document).ready(function () {
           }
       });
     },
-    error:function (richiesta,stato,errore) {
+    error:function (err) {
       alert("Chiamata fallita!")
     }
   })

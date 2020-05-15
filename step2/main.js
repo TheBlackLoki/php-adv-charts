@@ -13,7 +13,7 @@ function chiamataAjax(url,chart) {
     success:function (data,stato) {
       chart(data)
     },
-    error:function (richiesta,stato,errore) {
+    error:function (err) {
       alert("Chiamata fallita!")
     }
   })
@@ -67,7 +67,7 @@ function lineChart(data) {
                     }
               }]
           }
-        }
+      }
   });
 }
 
